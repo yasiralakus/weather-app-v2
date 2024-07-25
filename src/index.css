@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+
+li, summary { list-style: none;}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Poppins', sans-serif;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/* hazır kodlarım */
+
+.full-page {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../assets/images/bg.jpg);
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.error-box {
+    width: 480px;
+    height: 480px;
+    position: fixed;
+    padding: 32px;
+    background-color: #FF3333;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    gap: 16px;
+    > i {
+        font-size: 80px;
+    }
+    > p {
+        font-size: 24px;
+        letter-spacing: 1px;
+        font-weight: 300;
+        text-align: center;
+        line-height: 1.5;
+    }
+    > button {
+        position: absolute;
+        right: 25px;
+        top: 20px;
+        background-color: transparent;
+        border: none;
+        font-size: 32px;
+        line-height: 1;
+        color: #FFF;
+        cursor: pointer;
+        transition: all .3s;
+    }
+    > button:hover {
+        color: #000;
+    }
+}
+
+.container {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    > h1 {
+        line-height: 1;
+        font-size: 36px;
+        color: #FFF;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    > div {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        > input {
+            width: 300px;
+            padding: 10px 16px;
+            color: #000;
+            letter-spacing: 1px;
+            border: none;
+            outline: none;
+            transition: all .3s;
+        }
+        > button {
+            width: 100px;
+            padding: 10px 16px;
+            background-color: #FFF;
+            color: #000;
+            letter-spacing: 1px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+        > button:hover {
+            background-color: #eee;
+        }
+    }
+}
+
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    min-height: 164px;
+    gap: 8px;
+    > h3 {
+        font-weight: 300;
+        font-size: 40px;
+        line-height: 1;
+    }
+    > h1 {
+        font-weight: 300;
+        font-size: 90px;
+        line-height: 1;
+    }
+    > p {
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+    }
+}
+
+@media (width < 500px) {
+
+    .container {
+        gap: 16px;
+    }
+
+    .form {
+        gap: 16px;
+        > h1 {
+            font-size: 24px;
+        }
+        > div {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+        }
+    }
+
+    .results {
+        min-height: 126px;
+        > h3 {
+            font-size: 32px;
+        }
+        > h1 {
+            font-size: 60px;
+        }
+        > p {
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+    .error-box {
+        width: 330px;
+        height: 330px;
+        > i {
+            font-size: 60px;
+        }
+        > p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+    
+}
